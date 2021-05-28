@@ -23,12 +23,13 @@ object DumbSparkTest extends App {
 
     println("This is main()")
 
-    val sumList = buildList(5 )
+    val sumList = buildList(100 )
 
     println("Running non-Spark")
     val nonSparkResult = sumList.map(mapper)
     for ( i <- nonSparkResult) println(i)
 
+    println("Running Spark")
     val sparkResult = doSparkStuff(sumList)
     for (i <- sparkResult) println(i)
 
